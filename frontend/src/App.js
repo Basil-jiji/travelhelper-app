@@ -1,10 +1,15 @@
 import './App.css';
-import HomeScreen from './screens/HomeScreen';
+import { Container } from 'react-bootstrap';
+import { Outlet } from 'react-router-dom';
 
 const App = () => {
   return (
     <>
-      <HomeScreen />
+      <main className="py-3">
+        <Container>
+          <Outlet />
+        </Container>
+      </main>
     </>
   );
 };
