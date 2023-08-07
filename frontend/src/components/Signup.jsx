@@ -8,15 +8,7 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [image, setImage] = useState('');
-
-  //   useEffect(() => {
-  //     if(user){
-  //         setName(user.name)
-  //         setEmail(user.email)
-  //         setPassword(user.password)
-  //     }
-  //   })
+  const [image, setImage] = useState();
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -26,10 +18,12 @@ const Signup = () => {
       name: name,
       email: email,
       password: password,
-      image: 'Backend/uploads/images/b3544d68-bf30-47db-9173-cb8c23ae3cb0.png',
+      image: image
     };
     axios
-      .post('/api/v1/users/signup', userData)
+      .post('/api/v1/users/signup', userData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      })
       .then((response) => {
         console.log(response);
       })
@@ -85,14 +79,13 @@ const Signup = () => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
-        {/* <Form.Group controlId="image" className="mb-3">
+        <Form.Group controlId="image" className="mb-3">
           <Form.Label>Upload Image</Form.Label>
           <Form.Control
             type="file"
-            value={image}
             onChange={(e) => setImage(e.target.files[0])}
           />
-        </Form.Group> */}
+        </Form.Group>
         <Button type="submit" variant="primary" className="mt-2">
           Sign Up
         </Button>
