@@ -18,7 +18,7 @@ const Signup = () => {
       name: name,
       email: email,
       password: password,
-      image: image
+      image: image,
     };
     axios
       .post('/api/v1/users/signup', userData, {

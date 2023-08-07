@@ -13,6 +13,8 @@ import reportWebVitals from './reportWebVitals';
 import HomeScreen from './screens/HomeScreen';
 import PlaceScreen from './screens/PlaceScreen';
 import Signup from './components/Signup';
+import AddPlace from './components/AddPlace';
+import Login from './components/Login';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,6 +22,8 @@ const router = createBrowserRouter(
       <Route index={true} path="/" element={<HomeScreen />} />
       <Route path="/places/:id" element={<PlaceScreen />} />
       <Route path="/users/signup" element={<Signup />} />
+      <Route path="/users/login" element={<Login />} />
+      <Route path="/places/add" element={<AddPlace />} />
     </Route>
   )
 );

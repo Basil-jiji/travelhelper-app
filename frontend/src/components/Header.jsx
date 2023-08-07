@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -10,7 +11,12 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="/users/signup">SignUp</Nav.Link>
+              <Link to="/users/signup" className="text-decoration-none pe-3">
+                SignUp
+              </Link>
+              <Link to="/users/login" className="text-decoration-none">
+                Login
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

@@ -10,8 +10,8 @@ const Place = ({ places }) => {
           <Link to={`/places/${places._id}`}>
             <Card.Text className="text-center fw-bold">
               {places.title}
-              <p>{places._id}</p>
             </Card.Text>
+            <Card.Text>{places._id}</Card.Text>
             <Card.Text className="text-center">{places.description}</Card.Text>
           </Link>
         </Card.Body>

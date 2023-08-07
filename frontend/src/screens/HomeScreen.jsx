@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Row, Col } from 'react-bootstrap';
+import { Card, Row, Col, Button } from 'react-bootstrap';
 import axios from 'axios';
 import '../index.css';
 import Place from '../components/Place';
+import { Link } from 'react-router-dom';
 
 const HomeScreen = () => {
   const [places, setPlaces] = useState([]);
@@ -19,10 +20,19 @@ const HomeScreen = () => {
 
   return (
     <>
-      <h1 className="text-center py-3">Places</h1>
-      <Row >
+      <Row>
+        <Col>
+          <h3 className="py-3">Places</h3>
+        </Col>
+        <Col className="mr-0 text-end">
+          <Link to="/places/add">
+            <Button variant="primary">Add Place</Button>
+          </Link>
+        </Col>
+      </Row>
+      <Row>
         {places.map((place) => (
-          <Place places={place} />
+          <Place key={place._id} places={place} />
         ))}
       </Row>
     </>

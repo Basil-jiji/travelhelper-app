@@ -38,6 +38,7 @@ const getPlaceByUserId = asyncHandler(async (req, res, next) => {
     ),
   });
 });
+
 const createPlace = asyncHandler(async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -82,7 +83,7 @@ const updatePlace = asyncHandler(async (req, res, next) => {
   place.title = title;
   place.description = description;
   await place.save();
-  res.status(200).json({ place: place.toObject({ getter: true }) });
+  res.status(200).json(place);
 });
 
 const deletePlace = asyncHandler(async (req, res, next) => {
