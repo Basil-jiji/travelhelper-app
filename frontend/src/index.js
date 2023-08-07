@@ -12,12 +12,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import HomeScreen from './screens/HomeScreen';
 import PlaceScreen from './screens/PlaceScreen';
+import Signup from './components/Signup';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index={true} path="/" element={<HomeScreen />} />
       <Route path="/places/:id" element={<PlaceScreen />} />
+      <Route path="/users/signup" element={<Signup />} />
     </Route>
   )
 );

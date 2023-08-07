@@ -16,11 +16,11 @@ const HomeScreen = () => {
   }, []);
 
   console.log(places);
-  
+
   return (
     <>
       <h1 className="text-center py-3">Places</h1>
-      <Row>
+      <Row >
         {places.map((place) => (
           <Place places={place} />
         ))}

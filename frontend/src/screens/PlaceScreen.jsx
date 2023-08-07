@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Image, Row } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
@@ -24,7 +24,8 @@ const PlaceScreen = () => {
       <Link className="btn btn-light my-3" to="/">
         Go Back
       </Link>
-      <p>{place.description}</p>
+      <h1>{place.title}</h1>
+      <Image src={place.image} fluid />
     </>
   );
 };

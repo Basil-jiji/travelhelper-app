@@ -20,6 +20,7 @@ const getPlaceById = asyncHandler(async (req, res, next) => {
     );
     return next(error);
   }
+  // res.json({ place: place.toObject({ getters: true }) });
   res.json(place);
 });
 

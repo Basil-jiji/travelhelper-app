@@ -28,13 +28,13 @@ const signup = asyncHandler(async (req, res, next) => {
   const createdUser = new User({
     name,
     email,
-    image: req.file.path,
+    // image: req.file.path,
     password,
     places: [],
   });
 
   await createdUser.save();
-  res.status(201).json({ user: createdUser.toObject({ getters: true }) });
+  res.status(201).json(createdUser);
 });
 
 const login = asyncHandler(async (req, res, next) => {
